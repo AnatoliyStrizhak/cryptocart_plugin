@@ -8,7 +8,7 @@ chrome.tabs.query({'active': true, 'lastFocusedWindow': true}, function (tabs) {
 
     var url = tabs[0].url;
     var xhr = new XMLHttpRequest();
-    xhr.open('POST', 'http://localhost/supported_sites.js', true);
+    xhr.open('GET', 'https://raw.githubusercontent.com/AnatoliyStrizhak/cryptocart_plugin/master/supported_sites.js', true);
     xhr.onload = function() {
 
         res = JSON.parse(this.responseText);
