@@ -4,7 +4,7 @@ var whattosel=""
 
 function checkURL(){
 
-chrome.tabs.query({'active': true, 'lastFocusedWindow': true}, function (tabs) {
+    chrome.tabs.query({'active': true, 'lastFocusedWindow': true}, function (tabs) {
 
     var url = tabs[0].url;
     var xhr = new XMLHttpRequest();
@@ -19,7 +19,15 @@ chrome.tabs.query({'active': true, 'lastFocusedWindow': true}, function (tabs) {
             if (url.indexOf(res['sites'][i]['url']) > -1)
             {
                 sup_site=res['sites'][i]['url'];
-                whattosel=res['sites'][i]['order'];
+
+                if(chrome.i18n.getUILanguage().indexOf("ru") >-1)
+                {
+                    whattosel=res['sites'][i]['ru_order'];
+                }
+                else
+                {
+                    whattosel=res['sites'][i]['order'];
+                }
                 chrome.browserAction.setIcon({path:"logo.png"});
                 break;
             }
@@ -33,11 +41,11 @@ chrome.tabs.query({'active': true, 'lastFocusedWindow': true}, function (tabs) {
     }
 
     xhr.send();
-
 });
 
 }
 
-chrome.tabs.onActivated.addListener(checkURL);
 
+chrome.tabs.onActivated.addListener(checkURL);
+chrome.tabs.onUpdated.addListener(checkURL)
 

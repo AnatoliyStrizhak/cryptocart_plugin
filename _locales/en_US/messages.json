@@ -1,0 +1,13 @@
+{
+    "extDesc":{
+        "message":"<p>This plugin its a simple gate for buying different goods and services with cryptocurrencies.</p><p>Its working on Pokupo.ru platform in manual mode with  help of operator.</p><p>To make order just select <span id='whattosel'>order number</span> (if Pokupo CryptoCart icon is color) and click button 'Buy for crypto'</p>"
+    },
+
+    "extBuyBut":{
+        "message":"Buy for crypto"
+    },
+
+    "alert_msg":{
+        "message":"You dont select number, login or account id"
+    }
+}
