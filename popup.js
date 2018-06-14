@@ -8,21 +8,19 @@ for (var i =0; i<allElements.length; i++){
 }
 
 
-function buy() {
-
-    chrome.tabs.insertCSS(null, {file: 'cart.css'}, function () {
-        chrome.tabs.executeScript({file: 'cart.js'})
-        window.close();
-    });
-}
-
-
 back=chrome.extension.getBackgroundPage();
+
+function b()
+{
+    back.buy();
+    window.close();
+}
 
 if(back.sup_site!="")
 {
+
     document.getElementById('cryptobuy').style.display="block";
-    document.getElementById('cryptobuy').addEventListener('click', buy);
+    document.getElementById('cryptobuy').addEventListener('click', b);
     document.getElementById('whattosel').innerHTML="<strong>"+back.whattosel+"</strong>";
 }
 else

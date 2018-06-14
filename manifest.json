@@ -11,9 +11,9 @@
 
     "default_locale": "en_US",
 
-    "permissions": [ "tabs", "http://*/*", "https://*/*", "storage"],
+    "permissions": [ "tabs", "http://*/*", "https://*/*", "storage", "contextMenus"],
 
-    "background": {"scripts": ["background.js"],"persistent": false},
+    "background": {"scripts": ["background.js"]},
 
     "description": "Pokupo CryptoCart - pay for orders in *coins",
 
